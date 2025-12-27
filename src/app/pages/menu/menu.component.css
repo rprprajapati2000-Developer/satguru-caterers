@@ -1,0 +1,165 @@
+/* ================= PAGE WRAPPER ================= */
+.menu-page {
+  width: 100%;
+}
+
+/* ================= HERO BACKGROUND ================= */
+.menu-hero {
+  height: 55vh;
+  background-image: url('/assets/images/menunew.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* DARK OVERLAY */
+.menu-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* HERO TEXT */
+.menu-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.35); /* frosted overlay */
+  border-radius: 15px;
+  backdrop-filter: blur(5px); /* soft blur behind text */
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.menu-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* depth */
+}
+
+.menu-hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .menu-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .menu-hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* ================= MENU CONTENT ================= */
+.menu-content {
+  padding: 50px 25px;
+  background: #925904;
+}
+
+/* ================= MENU GRID ================= */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  background: #925904;
+}
+
+/* ================= CARD ================= */
+mat-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+mat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(130, 88, 88, 0.12);
+}
+
+/* ================= IMAGE (FIXED & CLEAR) ================= */
+mat-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;   /* 🔥 IMPORTANT: IMAGE CLEAR */
+  background-color: #f4ecf2;
+  padding: 10px;
+}
+
+/* ================= CARD TEXT ================= */
+mat-card-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+mat-card-content {
+  font-size: 14px;
+  color: #2d0404;
+  margin-top: 6px;
+}
+
+/* ================= PRICE & BUTTON ================= */
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-card-actions p {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* ================= VEG / NON-VEG ================= */
+.veg {
+  color: green;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.non-veg {
+  color: red;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .menu-hero {
+    height: 45vh;
+  }
+
+  .menu-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .menu-hero-content p {
+    font-size: 1rem;
+  }
+}

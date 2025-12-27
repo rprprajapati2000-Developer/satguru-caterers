@@ -1,0 +1,61 @@
+<div class="menu-page">
+
+  <!-- HERO SECTION WITH BACKGROUND IMAGE -->
+  <div class="menu-hero">
+    <div class="menu-hero-content">
+    <h1>Browse Our Menu</h1>
+      <p>
+        Delicious Indian dishes for your events.<br />
+        Veg & Non-Veg options available • Minimum order: 50 people
+      </p> 
+    </div>
+  </div>
+
+  <!-- MENU CONTENT -->
+  <div class="menu-content">
+
+    <!-- CATEGORY DROPDOWN -->
+    <div style="display:flex; justify-content:flex-end; margin-bottom:20px;">
+      <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select [(ngModel)]="selectedCategory">
+          <mat-option value="all">All</mat-option>
+          <mat-option value="appetizers">Appetizers</mat-option>
+          <mat-option value="mains">Main Courses</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- MENU GRID -->
+    <div class="menu-grid">
+      <mat-card
+        *ngFor="let item of filteredMenuItems"
+      >
+        <img
+          mat-card-image
+          [src]="item.image"
+          [alt]="item.name"
+        />
+
+        <mat-card-title>
+          {{ item.name }}
+          <span [class]="item.isVeg ? 'veg' : 'non-veg'">
+            {{ item.isVeg ? 'Veg' : 'Non-Veg' }}
+          </span>
+        </mat-card-title>
+
+        <mat-card-content>
+          {{ item.description }}
+        </mat-card-content>
+
+        <mat-card-actions>
+          <p>₹{{ item.price }}</p>
+          <button mat-button color="primary" (click)="addToCart(item)">
+            Add to Cart
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+</div>

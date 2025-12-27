@@ -1,0 +1,55 @@
+/* TOOLBAR */
+.header-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* BRAND CONTAINER */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* CHEF IMAGE */
+.chef-logo {
+  height: 42px;
+  width: 42px;
+  object-fit: contain;
+}
+
+/* BRAND TEXT */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+/* MAIN NAME */
+.brand-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* SUB NAME */
+.brand-sub {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* SPACER */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* NAV BUTTONS */
+button[mat-button] {
+  color: white;
+  font-weight: 500;
+}
+
+button[mat-button]:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
